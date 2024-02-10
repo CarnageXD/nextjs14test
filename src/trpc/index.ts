@@ -3,9 +3,11 @@ import { authRouter } from "./routes/auth-roter";
 import { publicProcedure, router } from "./trpc";
 import { QueryValidator } from "../lib/validators/query-validatior";
 import { getPayloadClient } from "../get-payload";
+import { paymentRouter } from "./routes/payment-router";
 
 export const appRouter = router({
   auth: authRouter,
+  payment: paymentRouter,
 
   getInfiniteProducts: publicProcedure
     .input(
